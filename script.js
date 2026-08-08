@@ -381,15 +381,19 @@ if (rsvpForm) {
 
     datos.append('tipo', tipoInvitacion);
 
-    try {
-      await fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: datos
-      });
+   try {
+  console.log('Datos enviados:', Object.fromEntries(datos));
 
-      formStatus.textContent =
-        '¡Gracias! Tu confirmación fue enviada.';
+  await fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: datos
+  });
+
+  console.log('Solicitud enviada a Google Apps Script');
+
+  formStatus.textContent =
+    '¡Gracias! Tu confirmación fue enviada.';
       formStatus.classList.add('success');
 
       rsvpForm.reset();
