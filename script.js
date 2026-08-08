@@ -305,7 +305,7 @@ configurarRuta();
 // ============================================
 
 const SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbzK3gvUd9olxmPCcxUQGNVG0Me2yWt_4ubgfikmJ6R1kmCbwmuyCbvgFG1r8uqr2fs/exec';
+  'https://script.google.com/macros/s/AKfycbwq0rEdJtnHY0OLh2BX1oQACmiK8pSc19vWmCoLPZ0uyIVHUOM2J0klQSX6xLymnICo/exec';
 
 if (rsvpForm) {
   rsvpForm.addEventListener('submit', async (event) => {
