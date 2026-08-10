@@ -744,7 +744,7 @@ h1, h2, h3 {
   }
   
   .hero-date {
-    font-size: 1.25rem;
+    font-size: 2.0rem;
   }
   
   .section-title {
@@ -759,11 +759,7 @@ h1, h2, h3 {
     font-size: 2.5rem;
   }
   
-  .timeline-item {
-    flex-direction: column;
-    gap: var(--spacing-xs);
-  }
-  
+ 
   .modal-content {
     padding: var(--spacing-lg) var(--spacing-md);
   }
@@ -771,14 +767,7 @@ h1, h2, h3 {
   .modal-title {
     font-size: 1.75rem;
   }
-  .timeline-event {
-  font-size: 1.35rem;
-}
 
-.timeline-time {
-  font-size: 0.95rem;
-}
-}
 
 @media (max-width: 480px) {
   .hero-names {
@@ -808,6 +797,95 @@ h1, h2, h3 {
   .footer-names {
     font-size: 2rem;
   }
+  /* Timeline muy chico */
+  .timeline-simple {
+    padding-left: 1.6rem;
+  }
+
+  .timeline-simple::before {
+    left: 0.4rem;
+  }
+
+  .timeline-row::before {
+    left: -1.6rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    top: 0.45rem;
+  }
+
+  .timeline-time {
+    font-size: 0.85rem;
+    min-width: 2.8rem;
+  }
+
+  .timeline-event {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   TIMELINE / CRONOGRAMA (2 ITEMS)
+   ============================================ */
+
+.timeline-simple {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding-left: 2.2rem; /* espacio para la línea y los puntos */
+  margin: 0 auto;       /* centrado horizontal dentro del container */
+}
+
+/* Línea vertical */
+.timeline-simple::before {
+  content: "";
+  position: absolute;
+  left: 0.6rem;         /* posición de la línea respecto al borde izquierdo */
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 1px;
+  background-color: var(--color-line);
+}
+
+/* Cada fila */
+.timeline-row {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+  margin: 0;
+}
+
+/* “Chiche”: punto sobre la línea */
+.timeline-row::before {
+  content: "";
+  position: absolute;
+  left: -2.2rem;        /* alineado con la línea */
+  top: 0.55rem;         /* ajuste fino según el tamaño de fuente */
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-secondary);
+  box-shadow: 0 0 0 4px var(--color-bg); /* “aire” alrededor del punto */
+}
+
+/* Hora */
+.timeline-time {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  min-width: 3.4rem;    /* para alinear si algún día agregás más rows */
+  text-align: right;
+  padding-right: var(--spacing-xs);
+}
+
+/* Evento */
+.timeline-event {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  color: var(--color-text);
+  line-height: 1.2;
 }
 /* ============================================
    DIVISOR Y APERTURA DE CARTA
